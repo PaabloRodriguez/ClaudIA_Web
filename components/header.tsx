@@ -10,8 +10,8 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleContactClick = () => {
-    window.location.href =
-      "mailto:jerezaragones@icloud.com?subject=Consulta sobre ClaudIA Insights&body=Hola, me gustaría obtener más información sobre ClaudIA Insights."
+    console.log("Botón contactar clickeado") // Debug
+    window.location.assign("mailto:jerezaragones@icloud.com?subject=Consulta%20sobre%20ClaudIA%20Insights&body=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20ClaudIA%20Insights.")
   }
 
   const navigationItems = [
@@ -65,12 +65,12 @@ export function Header() {
 
         {/* Botón a la derecha y menú móvil */}
         <div className="flex items-center gap-2 md:gap-4">
-          <Button
-            className="hidden sm:flex bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            onClick={handleContactClick}
+          <a
+            href="mailto:jerezaragones@icloud.com?subject=Consulta sobre ClaudIA Insights&body=Hola, me gustaría obtener más información sobre ClaudIA Insights."
+            className="hidden sm:flex bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-primary-foreground"
           >
             Contactar
-          </Button>
+          </a>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="lg:hidden">
@@ -93,15 +93,13 @@ export function Header() {
                     {item.label}
                   </a>
                 ))}
-                <Button
-                  className="mt-6 bg-primary hover:bg-primary/90 w-full"
-                  onClick={() => {
-                    handleContactClick()
-                    setIsOpen(false)
-                  }}
+                <a
+                  href="mailto:jerezaragones@icloud.com?subject=Consulta sobre ClaudIA Insights&body=Hola, me gustaría obtener más información sobre ClaudIA Insights."
+                  className="mt-6 bg-primary hover:bg-primary/90 w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-primary-foreground"
+                  onClick={() => setIsOpen(false)}
                 >
                   Contactar
-                </Button>
+                </a>
               </nav>
             </SheetContent>
           </Sheet>
