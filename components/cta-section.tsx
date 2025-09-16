@@ -12,16 +12,17 @@ export function CTASection() {
 
   return (
     <section className="py-20">
-      <div className="container">
-        <Card className="border-0 bg-primary text-primary-foreground">
-          <CardContent className="p-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">
-              ¿Listo para Transformar tus Datos Clínicos?
-            </h2>
-            <p className="mb-8 text-lg opacity-90 text-pretty max-w-2xl mx-auto leading-relaxed">
-              Descubre cómo ClaudIA puede ayudar a tu institución a aprovechar al máximo la información contenida en las
-              historias clínicas electrónicas.
-            </p>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-center">
+          <Card className="border-0 bg-primary text-primary-foreground max-w-4xl w-full">
+            <CardContent className="p-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">
+                ¿Listo para Transformar tus Datos Clínicos?
+              </h2>
+              <p className="mb-8 text-lg opacity-90 text-pretty max-w-2xl mx-auto leading-relaxed">
+                Descubre cómo ClaudIA puede ayudar a tu institución a aprovechar al máximo la información contenida en las
+                historias clínicas electrónicas.
+              </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90" disabled>
@@ -50,6 +51,7 @@ export function CTASection() {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
     </section>
   )

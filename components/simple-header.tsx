@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button"
 export function SimpleHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-xl">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-auto py-4 items-center justify-between">
         <div className="flex items-center space-x-2">
-          <img src="/images/claudia-logo-transparent.png" alt="ClaudIA Insights Logo" className="h-12 w-auto" />
+          <img src="/images/claudia-logo-transparent.png" alt="ClaudIA Insights Logo" className="h-80 md:h-80 lg:h-80 w-auto" />
         </div>
 
         <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">

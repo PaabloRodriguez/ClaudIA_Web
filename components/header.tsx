@@ -33,18 +33,20 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 md:h-20 items-center justify-between">
-        <div className="flex items-center space-x-2">
+      <div className="flex h-auto py-4 items-center justify-between max-w-[1200px] mx-auto w-full">
+        {/* Logo a la izquierda */}
+        <div className="flex items-center">
           <Image
-            src="/images/claudia-logo-transparent.png"
+            src="/images/claudia-log-recortado-removebg-preview.png"
             alt="ClaudIA Logo"
-            width={200}
-            height={65}
-            className="h-8 md:h-12 lg:h-60 w-auto"
+            width={160}
+            height={45}
+            className="h-25 w-auto"
           />
         </div>
 
-        <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
+        {/* Menú centrado */}
+        <nav className="hidden lg:flex flex-1 items-center justify-center space-x-6 text-sm font-medium">
           {navigationItems.map((item) => (
             <a
               key={item.href}
@@ -61,6 +63,7 @@ export function Header() {
           ))}
         </nav>
 
+        {/* Botón a la derecha y menú móvil */}
         <div className="flex items-center gap-2 md:gap-4">
           <Button
             className="hidden sm:flex bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -68,7 +71,6 @@ export function Header() {
           >
             Contactar
           </Button>
-
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="lg:hidden">
